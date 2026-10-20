@@ -57,7 +57,7 @@ Cada coluna é uma regra: o número vermelho é a quantidade de violações, o a
 - Se nenhum funcionário combinar com os filtros, aparece **"Nenhum funcionário encontrado com esses filtros."**
 
 ### Cartão do funcionário
-1. Clique no nome do funcionário para ver o cartão dia a dia. No topo, um número por regra mostra quantas violações ou pendências ele teve (ou OK). Clique no número de uma regra do dia (Intervalo de 11h, Almoço, Extra diária, 6 dias seguidos) para a tabela mostrar só os dias com problema naquela regra; **44h semanais** e **Domingo de folga** levam às listas de semanas e meses.
+1. Clique no nome do funcionário para ver o cartão dia a dia. No topo, um número por regra mostra quantas violações ou pendências ele teve (ou OK). Clique no número de uma regra do dia (Intervalo de 11h, Almoço, Extra diária, 6 dias seguidos) para a tabela mostrar só os dias com problema naquela regra; **44h semanais** e **Domingo de folga** levam às listas de semanas e meses (e, com o banco de horas ligado, **Banco de horas (fechamento)** leva à lista **Fechamento**).
 2. **‹ Funcionário anterior** e **Próximo funcionário ›** passam para o funcionário vizinho da lista (mesmo que ele esteja em outra página). Para voltar à lista, clique em **Funcionários** no caminho do alto: ela volta na página desse funcionário e com os mesmos filtros.
 3. Na tabela dos dias, **Mostrar dias → Só dias com problema** deixa só os dias com violação, pendência ou sem dados do RHiD, e **Regra** deixa só os dias com problema naquela regra. A tabela mostra até 31 dias por vez (com os dias de referência marcados, pode passar disso: use **Próxima ›**). Ao trocar de funcionário, os filtros do cartão voltam ao normal. Quando o RHiD não informou as horas do dia, **Total**, **Normais** e **Extras** aparecem como **—** (no Excel, a célula fica vazia), e não como 0:00.
 4. Clique em qualquer situação (✓ OK, Violação, Pendente) para ver **Como calculamos** e de onde veio cada dado.
@@ -79,7 +79,7 @@ Cada coluna é uma regra: o número vermelho é a quantidade de violações, o a
 ## Configurações
 - **Login do RHiD**: **Trocar login do RHiD** pede o e-mail e a senha de novo.
 - **Aparência**: **Claro** ou **Escuro**. Muda na hora e fica guardado neste computador.
-- **Regras**: tolerância do almoço e domingo/feriado fora do limite de extras. Valem a partir da próxima conferência.
+- **Regras**: tolerância do almoço, domingo/feriado fora do limite de extras e **Conferir banco de horas no fechamento** (desligada; ligue só depois que o banco de horas estiver configurado no RHiD). Valem a partir da próxima conferência.
 - **Justificativas do RHiD**: diga quais são férias, atestado ou afastamento.
 - Clique em **Salvar configurações** para guardar as regras e as justificativas.
 
@@ -90,6 +90,8 @@ Cada coluna é uma regra: o número vermelho é a quantidade de violações, o a
 - **Extra diária**: no máximo 2h (domingo e feriado trabalhados podem ficar fora — ver Configurações).
 - **44h por semana** (segunda a domingo), somando horas normais e o total trabalhado em domingos e feriados.
 - **6 dias seguidos** no máximo sem folga.
+- **Banco de horas (fechamento)** — opcional: só com **Conferir banco de horas no fechamento** ligada em Configurações. O saldo do banco de horas do RHiD precisa estar zerado no último dia do período conferido (horas que sobraram ou faltaram são violação; sem o saldo do RHiD, fica pendente). Desligada, a regra não aparece em lugar nenhum. **Ligue a chave só depois que o banco de horas estiver configurado no RHiD**: antes disso o RHiD informa saldo 0 para todos, e o programa mostraria todo mundo como "zerado" (OK) sem que o banco esteja funcionando.
+- Plantão que passa da meia-noite é conferido como um único dia, o do início; a batida da madrugada aparece com a data do dia seguinte.
 
 ## Situações
 - **Violação**: a regra não foi cumprida. **Pendente**: falta informação (batida faltando ou mês/semana não terminou). **Não se aplica**: a regra não vale para aquele dia.
