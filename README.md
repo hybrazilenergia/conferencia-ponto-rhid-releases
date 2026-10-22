@@ -43,7 +43,8 @@ O segundo sistema de ponto não tem ligação com o programa: ele exporta a **FO
 8. Para conferir outro arquivo, clique em **Escolher outro arquivo**. Ao ir para outra tela e voltar, a origem e o arquivo continuam escolhidos.
 
 O que muda no resultado de um PDF:
-- No alto aparece **"Origem: PDF — nome-do-arquivo.pdf"** e **"Regras: PDF – sistema 2"**: as regras usadas são as da aba **PDF – sistema 2** em Configurações.
+- No alto aparece **"Origem: PDF — nome-do-arquivo.pdf"** e as regras usadas, por exemplo **"Regras: MFA – escala normal e MFA – 12x36"**. São as da aba **PDF – sistema 2** em Configurações (veja [Regras da MFA](#regras-da-mfa-pdf--sistema-2)).
+- Cada funcionário é conferido com o conjunto dele: quem tem horário previsto de 12h (07:00–19:00 ou 19:00–07:00) na maioria dos dias usa **MFA – 12x36**; os demais, **MFA – escala normal**. Com os dois no resultado, a lista mostra o conjunto embaixo do nome (**"matr. 905 · MFA – 12x36"**) e o cartão do funcionário mostra **"Regras: MFA – 12x36"** no alto. Uma regra que não vale para o funcionário aparece como **–** (não se aplica) e não entra nas porcentagens da visão geral.
 - Não existe **Reconsultar os que falharam**: o arquivo é o mesmo, então ler de novo não muda nada. Corrija no sistema 2, exporte de novo e confira o novo arquivo.
 - No cartão do funcionário, as colunas dizem **Previsto (PDF)**, **Total (PDF)**, etc. Os totais (normais, extras) são os do PDF. As horas abonadas (**[ABN: …]**) não contam como trabalhadas.
 - Conta só o que está no arquivo. A contagem de **6 dias seguidos** começa no primeiro dia do arquivo. A semana que começa antes ou termina depois do período é conferida com os dias que o arquivo traz ("Semana incompleta no arquivo"). No mês incompleto, um domingo de folga nos dias do arquivo basta; sem nenhum, fica **Pendente** ("Mês incompleto no arquivo … e sem domingo de folga nesses dias"), porque os outros domingos não estão no arquivo.
@@ -100,7 +101,7 @@ Cada coluna é uma regra: o número vermelho é a quantidade de violações, o a
 ## Exportar
 - No Resultado, clique em **Exportar ▾** e escolha:
   - **PDF completo**: começa com a visão geral (números, gráficos, empresas e quem mais teve violações) e depois traz o cartão de cada funcionário.
-  - **Excel completo**: a primeira aba, **Visão geral**, tem os mesmos números da tela e, no fim, as **Regras usadas** (o conjunto e os valores de cada regra); depois vêm **Resumo**, **Violações e pendências** e **Dias**.
+  - **Excel completo**: a primeira aba, **Visão geral**, tem os mesmos números da tela e, no fim, as **Regras usadas** (cada conjunto usado e os valores de cada regra; no PDF da MFA, a escala normal e o 12x36); depois vêm **Resumo**, **Violações e pendências** e **Dias**.
   - **Excel só com problema**: só quem tem violação, pendência ou aviso (e quem não pôde ser conferido).
 - No cartão de um funcionário, **Exportar este funcionário (PDF)** salva só o cartão dele.
 - Depois de salvar, o arquivo abre sozinho e aparece **"Relatório salvo: nome-do-arquivo"** com o botão **Abrir pasta**, que mostra onde o arquivo ficou.
@@ -109,12 +110,12 @@ Cada coluna é uma regra: o número vermelho é a quantidade de violações, o a
 ## Configurações
 - **Login do RHiD**: **Trocar login do RHiD** pede o e-mail e a senha de novo.
 - **Aparência**: **Claro** ou **Escuro**. Muda na hora e fica guardado neste computador.
-- **Regras**: um conjunto de regras por origem dos cartões, nas abas **RHiD** e **PDF – sistema 2**. Para cada regra, a caixa **Conferir …** liga ou desliga a regra, e os campos abaixo dela mudam os valores (horas no formato HH:MM, por exemplo 44:00). **Conferir banco de horas (fechamento)** vem desligada: no RHiD, ligue só depois que o banco de horas estiver configurado lá; no PDF, só se a folha trouxer o banco de horas (colunas CRE. e DEB.). Até o RH definir as regras do sistema 2, o conjunto **PDF – sistema 2** começa com os mesmos valores do RHiD. **Voltar ao padrão** volta todas as regras do conjunto aos valores combinados com o RH (pede confirmação e só vale depois de salvar). As mudanças valem a partir da próxima conferência.
+- **Regras**: os conjuntos de regras de cada origem dos cartões, nas abas **RHiD** e **PDF – sistema 2**. A aba do PDF tem dois conjuntos, **MFA – escala normal** e **MFA – 12x36** (veja [Regras da MFA](#regras-da-mfa-pdf--sistema-2)). Para cada regra, a caixa **Conferir …** liga ou desliga a regra, e os campos abaixo dela mudam os valores (horas no formato HH:MM, por exemplo 44:00). **Conferir banco de horas (fechamento)** vem desligada: no RHiD, ligue só depois que o banco de horas estiver configurado lá; no PDF, só se a folha trouxer o banco de horas (colunas CRE. e DEB.). **Voltar ao padrão** volta todas as regras daquele conjunto aos valores combinados com o RH (pede confirmação e só vale depois de salvar). As mudanças valem a partir da próxima conferência. Quem já tinha ajustado o conjunto do PDF numa versão anterior continua com os seus valores; quem não tinha mexido passa a usar as regras da MFA.
 - **Justificativas**: uma seção por origem. Diga quais são férias, atestado ou afastamento. As do PDF aparecem depois que um PDF for aberto.
 - Clique em **Salvar configurações** para guardar as regras e as justificativas.
 
 ## As regras conferidas
-Os valores abaixo são os padrão. Quando algum valor foi mudado em **Configurações → Regras**, o alto do Resultado mostra **"Regras: RHiD (ajustadas)"**, e o Excel e o PDF trazem o bloco **Regras usadas** com os valores de cada regra.
+Os valores abaixo são os padrão do RHiD (as da origem PDF estão em [Regras da MFA](#regras-da-mfa-pdf--sistema-2)). Quando algum valor foi mudado em **Configurações → Regras**, o alto do Resultado mostra **"Regras: RHiD (ajustadas)"**, e o Excel e o PDF trazem o bloco **Regras usadas** com os valores de cada regra.
 - **Intervalo de 11h** entre o fim de um dia de trabalho e o início do próximo.
 - **Almoço**: obrigatório quando o dia passa de 6h trabalhadas; duração exigida pela escala do dia (sábado sem intervalo previsto usa o intervalo normal do funcionário).
 - **Domingo de folga**: pelo menos 1 por mês do calendário (domingo que é feriado e não foi trabalhado também conta; dispensado com 22 dias ou mais de afastamento no mês).
@@ -123,6 +124,22 @@ Os valores abaixo são os padrão. Quando algum valor foi mudado em **Configura�
 - **6 dias seguidos** no máximo sem folga.
 - **Banco de horas (fechamento)** — opcional: só com **Conferir banco de horas (fechamento)** ligada em Configurações. O saldo do banco de horas do RHiD precisa estar zerado no último dia do período conferido (horas que sobraram ou faltaram são violação; sem o saldo do RHiD, fica pendente). Desligada, a regra não aparece em lugar nenhum. **Ligue a chave só depois que o banco de horas estiver configurado no RHiD**: antes disso o RHiD informa saldo 0 para todos, e o programa mostraria todo mundo como "zerado" (OK) sem que o banco esteja funcionando.
 - Plantão que passa da meia-noite é conferido como um único dia, o do início; a batida da madrugada aparece com a data do dia seguinte.
+- **Trabalho em domingo ou feriado** — desligada no RHiD: cada domingo ou feriado com batidas é uma violação (é usada pela MFA, abaixo).
+
+### Regras da MFA (PDF – sistema 2)
+A folha do sistema 2 é da **MFA** (Mineração Floresta do Araguaia). O RH enviou as regras em 22/10/2026. A origem PDF tem dois conjuntos, cada um com os seus valores e o seu **Voltar ao padrão** em **Configurações → Regras → PDF – sistema 2**:
+
+| Regra | MFA – escala normal | MFA – 12x36 |
+|---|---|---|
+| Intervalo de 11h entre jornadas | ligada | ligada |
+| Almoço (acima de 6h trabalhadas, intervalo da escala, sem tolerância) | ligada | ligada |
+| Extra diária | até 2h por dia; domingo e feriado ficam fora do limite (a regra abaixo já acusa o dia); **no sábado, saindo até 16:00 (com 10 min de tolerância), a extra do dia não conta** | **nenhuma extra** (qualquer minuto é violação), inclusive em domingo e feriado |
+| Trabalho em domingo ou feriado | ligada: cada domingo ou feriado trabalhado (inclusive a **Folga trabalhada**) é uma violação | desligada |
+| Domingo de folga, 44h semanais, 6 dias seguidos, banco de horas | desligadas | desligadas |
+
+- **Quem é 12x36**: quem tem horário previsto de 12h (07:00–19:00 ou 19:00–07:00, como **07:00 12:00 13:00 19:00** e **19:00 00:00 01:00 07:00** no PDF) na maioria dos dias com horário previsto. Os demais (administrativo e turno) usam a escala normal.
+- **Sábado**: o administrativo trabalha 07:00–11:00 e faz extra até 16:00. Vale a última saída do dia: saindo até 16:00 mais a tolerância de 10 minutos (até 16:10), a extra não conta; saindo depois (ou depois da meia-noite, como no turno das 16:00 à 00:00), vale o limite de 2h. O horário fica no campo **No sábado, saindo até esta hora, a extra do dia não conta** (00:00 desliga) e os minutos de folga em **Tolerância na saída do sábado**.
+- **Tolerância de 10 minutos** na entrada e na saída: o sistema 2 já a aplica antes de calcular a extra que vem no PDF, e o programa usa essa extra. O intervalo do almoço não tem tolerância. Na exceção do sábado, a mesma tolerância vale para a saída (campo **Tolerância na saída do sábado**).
 
 ## Situações
 - **Violação**: a regra não foi cumprida. **Pendente**: falta informação (batida faltando ou mês/semana não terminou). **Não se aplica**: a regra não vale para aquele dia.
